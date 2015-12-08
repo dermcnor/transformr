@@ -16,3 +16,5 @@ Suggests:
 License: GPL-2
 LazyData: TRUE
 VignetteBuilder: knitr
+URL: http://github.com/dermcnor/transformr
+BugReports: http://github.com/dermcnor/transformr/issues
