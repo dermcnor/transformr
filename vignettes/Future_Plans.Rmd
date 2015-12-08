@@ -1,0 +1,83 @@
+---
+title: "Future Plans for transformr"
+author: "Derek McCrae Norton"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Future Plans for transformr}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+
+## Styles
+
+The `html_vignette` template includes a basic CSS theme. To override this theme you can specify your own CSS in the document metadata as follows:
+
+    output: 
+      rmarkdown::html_vignette:
+        css: mystyles.css
+
+## Figures
+
+The figure sizes have been customised so that you can easily put two images side-by-side. 
+
+```{r, fig.show='hold'}
+plot(1:10)
+plot(10:1)
+```
+
+You can enable figure captions by `fig_caption: yes` in YAML:
+
+    output:
+      rmarkdown::html_vignette:
+        fig_caption: yes
+
+Then you can use the chunk option `fig.cap = "Your figure caption."` in **knitr**.
+
+## More Examples
+
+You can write math expressions, e.g. $Y = X\beta + \epsilon$, footnotes^[A footnote here.], and tables, e.g. using `knitr::kable()`.
+
+```{r, echo=FALSE, results='asis'}
+knitr::kable(head(mtcars, 10))
+```
+
+Also a quote using `>`:
+
+> "He who gives up [code] safety for [code] speed deserves neither."
+([via](https://twitter.com/hadleywickham/status/504368538874703872))
+
+## Here are some of the possible transforms
+
+
+### Numeric Transforms
+
+- Box Cox $\lambda_2 = min(y) - 1$?
+
+$$y_{i}^{\lambda} = \cases{\frac{(y_{i} - \lambda_2)^{\lambda_1} - 1}{\lambda_1},& \text{if } \lambda_1 \ne 0 \\ \text{ln }(y_{i} - \lambda_2),& \text{if } \lambda_1 = 0}$$
+
+
+### Factor Transforms
+
+- Hashing?
+
+
+### Text Transforms
+
+- Word count
+- Average word length
+- Sentiment
+- ?
+
+
+### Date Transforms
+
+- Day
+- Week
+- Month
+- Year
+- Hour?
+
+
+
